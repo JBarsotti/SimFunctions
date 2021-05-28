@@ -904,6 +904,7 @@ contacts <- function(agents)
 #' @param iters Variable to store iteration number as a list for later use
 #' @param discharged Variable to store the number of discharged patients
 #' @param total_pat Variable to store the total number of patients, initial plus discharged
+#' @param transmission_dir Variable containing directory name where the C++ transmission function is stored
 #' @return Long list containing updated agents and simulation statistics
 #' @examples 
 #' sim_results <- simulate(ml_data, mod, timestep = 24L, agents, contact_matrix, initial_set, plot_now = FALSE, num, secondary_infections, hcw_to_pat_infections, pat_to_hcw_infections, pat_to_pat_infections, hcw_to_hcw_infections, secondary_patient_infected, secondary_hcw_infected, R0, attack_curve, pat_to_hcw, hcw_to_pat, hcw_to_hcw, iters, discharged, total_pat)
@@ -930,13 +931,14 @@ simulate <- function(ml_data,
                      hcw_to_hcw,
                      iters,
                      discharged,
-                     total_pat)
+                     total_pat,
+                    transmission_dir)
 {
   # For loop runs until out of timesteps.
   for (i in 1:timestep) {
 
     # Call Rcpp Function
-    Rcpp::sourceCpp("/home/ebarsotti/LSS/Statepi_Marketscan/jedibarsotti/Lord_of_the_Sim/proj_master/Transmission_Function.cpp")
+    Rcpp::sourceCpp(paste0(transmission_dir, "Transmission_Function.cpp"))
     disease_stats       <- propogate(agents, contact_matrix, initial_set)
 
     infection_stats     <- unlist(tail(disease_stats, n = 8))
