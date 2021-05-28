@@ -1,4 +1,4 @@
-Package: Sim_Functions
+Package: SimFunctions
 Type: Package
 Title: CDI Simulator R Functions
 Version: 0.0.1.0
