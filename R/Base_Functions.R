@@ -10,7 +10,7 @@ install_packages <- function()
 
   # Data analysis packages
   packages <- c("tidyverse", "RSQLite", "gbm", "xgboost",
-                "nortest", "RcppArmadillo", "microbenchmark",
+                "nortest", "RcppArmadillo",
                 "arm", "janitor", "bit64", "pROC", "caret", "randomForest",
                 "reshape2", "ggpubr", "parallel", "doSNOW", "foreach", "Rmpi")
 
@@ -37,7 +37,6 @@ add_packages <- function()
   library(RSQLite)
   library(nortest)
   library(RcppArmadillo)
-  library(microbenchmark)
   library(doParallel)
   library(gbm)
   library(arm)
