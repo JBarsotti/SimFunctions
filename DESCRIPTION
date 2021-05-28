@@ -1,0 +1,5 @@
+Package: Sim_Functions
+Type: Package
+Title: CDI Simulator R Functions
+Version: 0.0.1.0
+RoxygenNote: 7.1.1
