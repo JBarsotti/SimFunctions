@@ -27,7 +27,8 @@ simulate(
   hcw_to_hcw,
   iters,
   discharged,
-  total_pat
+  total_pat,
+  transmission_dir
 )
 }
 \arguments{
@@ -76,6 +77,8 @@ simulate(
 \item{discharged}{Variable to store the number of discharged patients}
 
 \item{total_pat}{Variable to store the total number of patients, initial plus discharged}
+
+\item{transmission_dir}{Variable containing directory name where the C++ transmission function is stored}
 }
 \value{
 Long list containing updated agents and simulation statistics
@@ -84,5 +87,5 @@ Long list containing updated agents and simulation statistics
 Take in the list of all agents and the contact matrix, call the C++ function "propogate" that spreads the infection, and return statistics about how much the infection spreads and to whom it spreads
 }
 \examples{
-sim_results <- simulate(ml_data, mod, timestep = 24L, agents, contact_matrix, initial_set, plot_now = FALSE, num, secondary_infections, hcw_to_pat_infections, pat_to_hcw_infections, pat_to_pat_infections, hcw_to_hcw_infections, secondary_patient_infected, secondary_hcw_infected, R0, attack_curve, pat_to_hcw, hcw_to_pat, hcw_to_hcw, iters, discharged, total_pat)
+sim_results <- simulate(ml_data, mod, timestep = 24L, agents, contact_matrix, initial_set, plot_now = FALSE, num, secondary_infections, hcw_to_pat_infections, pat_to_hcw_infections, pat_to_pat_infections, hcw_to_hcw_infections, secondary_patient_infected, secondary_hcw_infected, R0, attack_curve, pat_to_hcw, hcw_to_pat, hcw_to_hcw, iters, discharged, total_pat, transmission_dir)
 }
