@@ -9,10 +9,9 @@ install_packages <- function()
 {
 
   # Data analysis packages
-  packages <- c("tidyverse", "gbm", "xgboost",
-                "nortest", "RcppArmadillo",
+  packages <- c("gbm", "xgboost", "nortest", "RcppArmadillo",
                 "arm", "janitor", "pROC", "caret", "randomForest",
-                "reshape2", "ggpubr", "parallel", "doSNOW", "foreach", "Rmpi")
+                "reshape2", "ggpubr", "parallel", "doSNOW", "foreach", "Rmpi", "tidyverse")
 
   install.packages(packages)
 
@@ -33,7 +32,6 @@ add_packages <- function()
 {
 
   library(caret)
-  library(tidyverse)
   library(nortest)
   library(RcppArmadillo)
   library(doParallel)
@@ -48,6 +46,7 @@ add_packages <- function()
   library(parallel)
   library(doSNOW)
   library(foreach)
+  library(tidyverse)
 
 }
 
