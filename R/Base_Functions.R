@@ -31,6 +31,7 @@ install_packages <- function()
 add_packages <- function()
 {
 
+  library(tidyverse)
   library(caret)
   library(nortest)
   library(RcppArmadillo)
@@ -46,7 +47,6 @@ add_packages <- function()
   library(parallel)
   library(doSNOW)
   library(foreach)
-  library(tidyverse)
 
 }
 
